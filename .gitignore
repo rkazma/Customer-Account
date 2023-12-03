@@ -5,6 +5,9 @@
 # Environment variables
 /src/environments/*.ts
 
+# Ignore large files
+*.pack
+
 # Compiled TypeScript
 /*.js
 *.js.map
@@ -21,3 +24,5 @@
 # User-specific files
 /.DS_Store
 /Thumbs.db
+
+.angular/cache/
