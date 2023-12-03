@@ -1,0 +1,31 @@
+<div>
+  <h2>
+    Please choose between 2 customers with Ids 1001 & 1002 to cover the
+    scenarios
+  </h2>
+  <!-- Label and input for Customer ID -->
+  <label for="customerId">Customer ID</label>
+  <input id="customerId" [(ngModel)]="customerId" placeholder="Customer ID" />
+
+  <!-- Label and input for Amount -->
+  <label for="amount">Amount</label>
+  <input id="amount" [(ngModel)]="amount" placeholder="Amount" />
+
+  <!-- Buttons -->
+  <div>
+    <button (click)="createAccount()">Create Account</button>
+  </div>
+  <!-- Button for Get Transactions -->
+  <div>
+    <button (click)="getInfoTransactions()">Get Transactions</button>
+  </div>
+
+  <app-customer-info-table [customerInfo]="customerInfo">
+  </app-customer-info-table>
+
+  <!-- Transaction Table Component -->
+  <app-transactions-table
+    [transactions]="transactions"
+    [showFooter]="showFooter"
+  ></app-transactions-table>
+</div>
