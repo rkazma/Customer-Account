@@ -1,31 +1,65 @@
-<div>
-  <h2>
-    Please choose between 2 customers with Ids 1001 & 1002 to cover the
-    scenarios
-  </h2>
-  <!-- Label and input for Customer ID -->
-  <label for="customerId">Customer ID</label>
-  <input id="customerId" [(ngModel)]="customerId" placeholder="Customer ID" />
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>
+        Please choose between 2 customers with Ids 1001 & 1002 to cover the
+        scenarios
+      </h2>
 
-  <!-- Label and input for Amount -->
-  <label for="amount">Amount</label>
-  <input id="amount" [(ngModel)]="amount" placeholder="Amount" />
+      <!-- Label and input for Customer ID -->
+      <div class="form-group">
+        <label for="customerId">Customer ID</label>
+        <input
+          id="customerId"
+          class="form-control"
+          [(ngModel)]="customerId"
+          placeholder="Customer ID"
+        />
+      </div>
 
-  <!-- Buttons -->
-  <div>
-    <button (click)="createAccount()">Create Account</button>
+      <!-- Label and input for Amount -->
+      <div class="form-group mb-2">
+        <label for="amount">Amount</label>
+        <input
+          id="amount"
+          class="form-control"
+          [(ngModel)]="amount"
+          placeholder="Amount"
+        />
+      </div>
+
+      <!-- Create Account Button -->
+      <div class="form-group mb-4">
+        <button class="btn btn-primary" (click)="createAccount()">
+          Create Account
+        </button>
+      </div>
+
+      <!-- Get Transactions Button -->
+      <div class="form-group mb-1">
+        <button class="btn btn-secondary" (click)="getInfoTransactions()">
+          Get Transactions
+        </button>
+      </div>
+    </div>
   </div>
-  <!-- Button for Get Transactions -->
-  <div>
-    <button (click)="getInfoTransactions()">Get Transactions</button>
-  </div>
 
-  <app-customer-info-table [customerInfo]="customerInfo">
-  </app-customer-info-table>
+  <!-- Customer Info Table -->
+  <div class="row mb-2">
+    <div class="col">
+      <app-customer-info-table
+        [customerInfo]="customerInfo"
+      ></app-customer-info-table>
+    </div>
+  </div>
 
   <!-- Transaction Table Component -->
-  <app-transactions-table
-    [transactions]="transactions"
-    [showFooter]="showFooter"
-  ></app-transactions-table>
+  <div class="row">
+    <div class="col">
+      <app-transactions-table
+        [transactions]="transactions"
+        [showFooter]="showFooter"
+      ></app-transactions-table>
+    </div>
+  </div>
 </div>
